@@ -2,10 +2,10 @@
   "name": "user-authentication-service",
   "version": "1.0.0",
   "description": "User authentication Service - Stock Market Webapp",
-  "type":"module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [
     "user",
@@ -13,5 +13,9 @@
     "microservice"
   ],
   "author": "Shruti",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  }
 }
