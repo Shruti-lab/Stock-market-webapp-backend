@@ -1,0 +1,17 @@
+{
+  "name": "user-authentication-service",
+  "version": "1.0.0",
+  "description": "User authentication Service - Stock Market Webapp",
+  "type":"module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "user",
+    "authentication",
+    "microservice"
+  ],
+  "author": "Shruti",
+  "license": "ISC"
+}
