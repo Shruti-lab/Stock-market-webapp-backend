@@ -141,4 +141,10 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+# Optional ESLint cache
+.eslintcache
+
+# dist folder for typescript compiled files
+./dist
+
 # End of https://www.toptal.com/developers/gitignore/api/node

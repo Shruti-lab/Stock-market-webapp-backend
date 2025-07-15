@@ -5,7 +5,20 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "build": "tsc --build",
+    "start": "node ./dist/index.js",
+    "start:dev": "nodemon ./src/index.ts",
+    "start:watch": "ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "lint:check": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "migrate": "drizzle-kit push --schema ./src/db/schema.ts --output ./src/db/migrations",
+    "migrate:dev": "drizzle-kit push --env development --schema ./src/db/schema.ts --output ./src/db/migrations",
+    "migrate:prod": "drizzle-kit push --env production --schema ./src/db/schema.ts --output ./src/db/migrations",
+    "migrate:reset": "drizzle-kit reset --schema ./src/db/schema.ts --output ./src/db/migrations",
+    "migrate:reset:dev": "drizzle-kit reset --env development --schema ./src/db/schema.ts --output ./src/db/migrations",
+    "migrate:reset:prod": "drizzle-kit reset --env production --schema ./src/db/schema.ts --output ./src/db/migrations"
   },
   "keywords": [
     "user",
@@ -15,7 +28,18 @@
   "author": "Shruti",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.14",
+    "@types/pg": "^8.15.4",
+    "drizzle-kit": "^0.31.4",
     "nodemon": "^3.1.10",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.44.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   }
 }
